@@ -1,0 +1,29 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowAccesstoKMSKeyToDecryptArtefact",
+      "Effect": "Allow",
+      "Action": [
+        "kms:DescribeKey",
+        "kms:GenerateDataKey*",
+        "kms:Encrypt",
+        "kms:ReEncrypt*",
+        "kms:Decrypt"
+      ],
+      "Resource": [
+        "arn:aws:iam::304184664646:user/ayo-dev"
+      ]
+    },
+    {
+      "Sid": "AllowListS3Objects",
+      "Effect": "Allow",
+      "Action": [
+        "s3:Get*"
+      ],
+      "Resource": [
+        "arn:aws:s3:::ayolab/*"
+      ]
+    }
+  ]
+}
